@@ -1,0 +1,163 @@
+<html>
+
+    <head>
+        <title>CSC 120 Lab 12</title>
+    </head>
+
+    <body alink="#FF0000" bgcolor="#ffffff" link="#0000EE" text="#000000" vlink="#FF8800">
+
+    <h2 align="center"><font color="#990099">CSC 120 Lab 12</font></h2>
+
+    <p>This lab is another example of the use of the <code>split</code> method of the <b>String</b> class, and
+	   illustrates how we can process lines of information that contain more than one value per line.</p>
+
+    <ol type="A">
+
+        <li><b>Get the beginning version of the Lab12 program up and running.</b><br /><br />
+
+            <ol>
+
+                <li>Create a new Netbeans project called <b>Lab12</b>.
+                    Make sure the Location is in your H:\CSC120\Java folder.<br /><br />
+                </li>
+
+                <li>In your web browser, right click on
+                    <b><a href="MUFrame.java">MUFrame.java</a></b>
+                    and choose <b>Save Target As...</b> (or <b>Save Link As...)</b>
+                    and save the file in the <b>src</b> folder of your project.&nbsp; <br /><br />
+                </li>
+
+                <li>Compile and run the program at this time.&nbsp; Then
+				    type your name and some text on multiple lines in the
+                    input area at the top of the window and click the Process Input button to see 
+					what happens.&nbsp; The program should show each line of the input you entered with a line number, starting with line 0.<br /><br />
+                </li>
+            </ol>
+        </li>
+
+        <li><b>Use the <code>split</code> method to break each line of input into separate values.</b><br /><br />
+
+            <ol>
+
+                <li>Now that we have an array that contains each line of the input in a separate array element,
+				    we can process each line of input in the body of a <code>for</code> loop.&nbsp; Let's say we
+					have some data that describes the makeup of the Cleveland Orchestra for the current season.&nbsp;
+					Each line of input will contain three values for a different type of instrument in the
+					orchestra:&nbsp; the name of the instrument, the orchestra section to which the instrument
+					belongs, and the number of musicians that play that instrument this season.&nbsp; Each of
+					these values is separated from each other by a semicolon.&nbsp; 
+				    <br/><br/>
+					To split each line of input into three pieces, we can use the following code in the
+					<code>for</code> loop that displays each line in the output area:
+<pre>
+    String[] part = lineOfInput[index].split(";");
+</pre>					
+                    Now we have an array of <code>String</code>s called <code>part</code>, where element 0
+					of the array contains the instrument name, element 1 contains the instrument's section
+					and element 2 contains the number of musicians for this instrument.
+					<br><br>
+				</li>
+
+                <li>In your web browser, right click on
+                    <b><a href="Instrument.java">Instrument.java</a></b>
+                    and choose <b>Save Target As...</b> (or <b>Save Link As...)</b>
+                    and save the file in the <b>src</b> folder of your project.&nbsp; This file defines the
+					<code>Instrument</code> class with private data members for each of the three
+					pieces of data described above.&nbsp; Look at the code in this file and make sure
+					you understand how it is written. <br /><br />
+                </li>
+
+				<li>At the top of the <b>MUFrame</b> class, declare an array of Instrument objects.&nbsp; Then, 
+				    immediately before the <code>for</code> loop in the actionPerformed method 
+				    for the processInput button, instantiate
+					the array of Instruments so that there are as many elements in this array as there are
+					lines in the input.
+                    <br/><br/>
+				</li>
+				
+				<li>Inside the <code>for</code> loop in the actionPerformed method for the processInput button,
+				    do the following:
+					<ul>
+					    <li> split the input line into an array of Strings called <code>part</code>,
+						     using a semicolon as the delimiter (see the code example above) </li>
+						<li> <code> for (Integer p = 0; p &lt; part.length; p++) {<br/> &nbsp; &nbsp; part[p] = part[p].trim();<br/>} // end for</code> </li>
+						<li> instantiate element <code>index</code> of the array of <code>Instrument</code> objects, using the <code>part</code> array as the values to pass to the constructor method  </li>
+							 <ul>
+							     <li> the first parameter for the constructor call should be &nbsp;<code>part[0]</code> </li>
+							     <li> the second parameter for the constructor call should be &nbsp;<code>part[1]</code> </li>
+							     <li> the third parameter for the constructor call should be &nbsp;<code>Integer.parseInt( part[2] )</code> </li>
+							 </ul>
+						<li> change the <code>append</code> call inside the loop to be this:
+<pre>
+    outputArea.append( "line " + index + ": " + instrumentArray[index].toString() + "\n" );
+</pre>
+						 (you may need to change the name <code>instrumentArray</code> in this
+						 sample to be the name you used in your program)</li>
+					</ul>
+				    <br>
+				</li>
+				
+				<li>Run your program, and test it with this data from the Cleveland Orchestra:
+					<blockquote>
+					<form>
+					  <textarea rows="5" cols="50">
+Timpani; Percussion; 2
+Drum; Percussion; 2
+Triangle; Percussion; 1
+Wood Blocks; Percussion; 1
+French Horn; Brass; 6
+Trumpet; Brass; 4
+Cornet; Brass; 2
+Trombone; Brass; 3
+Bass Trombone; Brass; 1
+Euphonium; Brass; 1
+Tuba; Brass; 1
+Violin, 1st; Strings; 18
+Violin, 2nd; Strings; 16
+Viola; Strings; 11
+Cello; Strings; 11
+Bass; Strings; 9
+Harp; Strings; 2
+Flute; Woodwinds; 4
+Piccolo; Woodwinds; 1
+Oboe; Woodwinds; 4
+English Horn; Woodwinds; 1
+Clarinet; Woodwinds; 6
+Bassoon; Woodwinds; 4
+Contra-Bassoon; Woodwinds; 1
+Piano; Keyboards; 2
+Harpsichord; Keyboards; 1
+</textarea>
+					</form>
+					</blockquote>
+				The program should print information for 26 different instruments from this test data.
+                    <br/><br/>				
+                </li>
+				
+				<li>Add code to your program that prints the following information about the orchestra:<br><br>
+				    <ol type="i">
+					    <li> after all of the instruments in the orchestra have been printed, print a single line
+                             that shows the total number of musicians in the entire orchestra </li>
+					    <li> next, print a line for every instrument in the orchestra that is in the "Brass" section </li>
+					    <li> then, print only one line that shows the total number of musicians in the Strings section </li>
+					    <li> finally, print only one line that shows the maximum number of musicians that play any 
+						     instrument in the Woodwinds section </li>
+					</ol> <br>
+					    For the test data given for this lab, your program should print that there are 115 musicians in the
+						entire orchestra, 67 of whom play in the Strings section.&nbsp; There are 7 different instruments in the
+						Brass section (French Horn, Trumpet, Cornet, Trombone, Bass Trombone, Euphonium and Tuba), and the 
+						maximum number of musicians for any instrument in the Woodwinds section is 6.
+				    <br/><br/>
+				</li>
+				
+			</ol>	
+
+        </li>
+
+		<li> Submit your <b>Lab12</b> project as a .zip file to the 
+             <a href="http://d2l.mountunion.edu/" target="_blank"> D2L dropbox</a> for grading, as usual. </li>
+    </ol>
+
+    </body>
+
+</html>

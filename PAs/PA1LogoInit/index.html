@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>CSC 120 Programming Assignment 1</title>
+</head>
+<body vlink="#ff8800" alink="#ff0000" bgcolor="#ffffff" link="#0000ee"
+ text="#000000">
+<font color="#990099">
+<center>
+<h2>CSC 120 Programming Assignment 1</h2>
+</center>
+</font>
+<h4> Note:&nbsp;You should <b>not</b> work on this assignment during
+                lecture or lab class-time unless:
+    <ol type="a">
+        <li>You have completed all of the in-class assigned work for the day,
+            and</li>
+        <li>You have permission from the instructor.</li>
+    </ol>
+</h4>
+
+<h3> Overview: </h3>
+    <blockquote>
+    	Develop a Java Application program that draws a visual scene in the 
+		graphical output window. &nbsp;Your application must declare, instantiate
+		and draw at least TWO (2) objects from each of TWO (2) different classes
+		that represent visual objects (in other words, the classes must have a
+		<code>draw</code> method that can be called from the <code>MUPanel</code>
+		class).&nbsp; One of the classes will use the drawing methods of the Graphics
+		class to display a Logo that you develop, and the other class will draw
+		your initials made up of the shapes that can be drawn using the Graphics 
+		class methods.&nbsp; Each Logo object and each Initials object must be
+		drawn in a different screen location.&nbsp;  Details of this assignment
+		and links to several example output screens appear below.
+		<br><br>
+		In effect, this assignment is quite similar to the Boat lab that we've worked on 
+		recently; with the requirement that two different-looking classes are written
+		by the student, and at least two objects from each of the classes is drawn in 
+		different locations on the screen.
+    </blockquote>
+
+<h3> Instructions and Requirements: </h3>
+<ol>
+  <li>
+    <p>Create an application called <span style="font-weight: bold;">PA1
+       </span>(no spaces in the name, so <span style="font-weight: bold;">PA1</span>,
+	   not <span style="font-weight: bold;">PA 1</span>).&nbsp; It should
+	   have the classes <code>MUPanel</code>, <code>Initials</code> and <code>Logo</code>
+	   in the files <b>MUPanel.java</b>, <b>Initials.java</b> and <b>Logo.java</b>,
+	   respectively.&nbsp; To get started, you can use the <b>MUPanel.java</b> file
+	   from previous labs you've worked on in Java (Lab1, for example), and you can
+	   right-click on the following links and save the file in the <b>src</b> folder
+	   of your <b>PA1</b> project: <br/>
+       <ul>
+	       <li> <a href="Logo.java"> Logo.java</a> </li><br/>
+	   </ul>
+	   Then you can copy the Logo.java file and rename the copy as Initials.java, so
+	   you have three .java files in the src folder for your project.&nbsp; You can 
+	   change the class names <code>Initials</code> and 
+	   <code>Logo</code> to names that are more meaningful for your project if you wish.
+	</p>
+  </li>
+  
+  <li>
+    <p>In the <code>MUPanel </code>class, there should be two private data members (aka 
+	   properties) of type <code>Initials </code>and two private data members of type
+	   <code>Logo</code>.&nbsp; They should be instantiated inside of the 
+	   <code>MUPanel </code>constructor, and in the <code>paintComponent</code>method
+	   each of these objects should be "asked" to draw themselves, by calling their
+	   <code>draw </code>method.</p>
+  </li>
+  
+  <li>
+    <p>The <code>Initials </code>class and the <code>Logo </code>class each should have
+	   data members of type <code>Integer </code> called <code>anchorX</code> and 
+	   <code>anchorY</code>.&nbsp; They may have other data members, too, as seen in 
+	   the sample Logo.java file you copied earlier.&nbsp; If you aren't going to use
+	   some of the data members in the given code, you should delete them from the file
+	   to keep your program as simple as possible.</p>
+  </li>
+  
+  <li>
+    <p>The <code>Initials </code>class and the <code>Logo </code>class each need a 
+	   constructor method to initialize all data members.</p>
+  </li>
+
+  <li>
+    <p>The <code>Initials </code>class and the <code>Logo </code>class each need a
+	   <code>draw </code>method that accepts a parameter of type <code>Graphics</code>.</p>
+  </li>
+
+  <li>
+    <p>All drawing done by the <code>draw </code>method of the <code>Initials</code> class
+	   should be relative to one fixed point referenced by the <code>anchorX </code>and 
+	   <code>anchorY</code> data members. For instance you might use something like <br>
+	   </p>
+    <pre style="margin-left: 40px;">g.drawRect(anchorX + 25, anchorY + 50, width, height);</pre>
+    <p> rather than something like</p>
+    <pre style="margin-left: 40px;">g.drawRect(125, 250, width, height);</pre>
+    <p>Similarly, the <code>draw </code>method of the <code>Logo</code> class should also
+	   draw everything relative to one fixed point referenced by the <code>anchorX </code>
+	   and <code>anchorY </code>data members.</p>
+  </li>
+  
+  <li>
+    <p>The <code>draw </code>method of the <code>Initials</code> class must use various
+	   drawing methods of the <code>Graphics </code>class to draw the three initials of
+	   your name in some decorative style without using <code>drawString</code>.&nbsp; You
+	   may use your initials or your first name.&nbsp; (If you use your first name, the class
+	   should be called <code>FirstName </code>instead of <code>Initials</code>.)<br>
+    </p>
+  </li>
+
+  <li>
+    <p>The <code>draw </code>method of the <code>Logo</code> class draws some kind of personal logo or
+	   some kind of scene relating to a favorite hobby, sport or interest of yours.</p>
+  </li>
+
+  <li>
+    <p>You must use at least four different drawing colors, and at least four different drawing
+	   methods of the <code>Graphics </code>class (not counting <code>setColor</code>).&nbsp; For
+	   example <code>drawRect</code>, <code>fillRect</code>, <code>drawOval</code>,
+	   <code>fillOval</code>, <code>drawArc</code>, and/or <code>fillArc</code>.</p>
+	<p>Note:&nbsp; You CANNOT use <code>g.drawString</code> to cause your intitals to be printed on the
+	   screen in the <code>Initials</code> class &mdash; you must create the initials from basic shapes 
+	   like rectangles, ovals and arcs.&nbsp; However, you can use <code>g.drawString</code>
+	   to draw some text in the <code>Logo</code> class.&nbsp; See the last example below (the BOE
+	   example), where
+	   <code>g.drawString</code> was used to print the name of the soft drink on each of the
+	   bottles.
+  </li>
+
+  <li>
+    <p>DO NOT use any of the shape-drawing or shape-filling methods of the <code>Graphics</code> class
+	   in the <code>paintComponent</code> method of the MUPanel class.&nbsp; All drawing must be
+	   done in the <code>draw</code> methods of the Logo class and the Initials class.</p>
+  </li>
+</ol>
+
+<h3> Hints: </h3>
+  <blockquote>
+    Look <a href="PA1Hints.html" target="_blank"> here</a> for some helpful hints.
+  </blockquote>
+  
+<h3> Enhancements: </h3>
+<blockquote>
+    This assignment includes the requirement to add at least two extra visual features over and above
+	the base requirements that make the output of the program more fun,
+    interesting, or surprising.&nbsp; Use your creativity and have fun with your 
+	drawings!&nbsp; Here are some suggestions for things you could do as enhancements:
+    <ol type="a">
+	  <li> One possible enhancement would be to define your own colors (in addition to the
+		standard ones that are part of the <code>Color</code> class). To do this, you can
+		use the following method call:
+        <blockquote>
+		    <code> g.setColor( new Color( <font color="#990000"><em>red</em></font>,
+			                              <font color="#009900"><em>green</em></font>,
+										  <font color="#000099"><em>blue</em></font>) ); </code>
+        </blockquote>
+		where the three parameters shown above represent the intensities of the red, green,
+		and blue components of your chosen color, respectively. Each parameter must be an integer
+		number between 0 and 255.&nbsp; How do you know the three primary color components 
+		of some shade you want to use (such as turquoise)? Visit the 
+		<a href="http://html-color-codes.com/rgb.php" target="_blank">VisiBone Color Code Page</a>
+		to choose a color (the numbers shown diagaonally in each box give the red, green and blue values
+		you should use when creating a new Color, in order from top-left to bottom-right).&nbsp; As 
+		an example, to draw using a light shade of yellow, use the following Java method call: <code>
+		g.setColor(&nbsp;new&nbsp;Color(&nbsp;255,&nbsp;255,&nbsp;153&nbsp;)&nbsp;);
+        </code>
+	  </li><br/>
+		
+	  <li>You could define an additional class or two to be other logo(s) that are displayed on
+	    screen along with your <code>Logo</code> and <code>Initials</code> objects as an enhancement.
+      </li><br/>
+      <li>Another possible enhancement could be using an irregular polygon (see the 
+	    <a href="PolygonDemo/PolygonDemo.html">Polygon Demo page</a>).</li>
+    </ol>
+    You must document your enhancements by adding comment lines at the top of your program in 
+	<b>MUPanel.java</b> after your CSC 120, name, etc, comments.&nbsp; Your comments should
+	explain what you did for your enhancements.
+</blockquote>
+	
+ <h3> Programming Style, Indenting, and Comments: </h3>
+ <blockquote>
+Every Java program written in the
+Department of Computer Science and Information Systems must follow the
+Department's documentation and style guidelines in order to obtain full credit.&nbsp;
+Click on <a href="StyleGuide.html" target="_blank">THIS LINK</a>
+to see a list of
+requirements for programming style in CSC 120.
+ </blockquote>
+ 
+ <h3> Turning in your Program for Grading: </h3>
+<blockquote>
+  When you have completed your NetBeans project for PA1 (including the comment header at
+  the top of the MUPanel.java file with your name, etc.), use File Explorer to make a
+  .zip file of the <b>PA1</b> folder in your
+<b>H:\CSC120\Java</b> folder so that the file is named <b>PA1.zip</b>.&nbsp; Then upload
+that file to the PA1 dropbox in <a href="http://d2l.mountunion.edu" target="_blank">D2L</a>.
+</blockquote>
+
+<h3> Note:&nbsp; It is expected that each student will complete this
+assignment INDIVIDUALLY. </h3>
+
+<h3>Examples: </h3>
+<ul>
+  <li><a href="Sample01-PA1.png" target="_blank">KRR</a></li>
+  <li><a href="Sample02-PA1.png" target="_blank">EAC</a></li>
+  <li><a href="Sample03-PA1.png" target="_blank">BNS</a></li>
+  <li><a href="Sample05-PA1.png" target="_blank">TIL</a></li>
+  <li><a href="Sample04-PA1.png" target="_blank">Jill</a></li>
+  <li><a href="Sample07-PA1.png" target="_blank">BOE</a></li>
+  <li><a href="Sample08-PA1.png" target="_blank">WDS</a></li>
+</ul>
+<p> </p>
+<h3> Grading Rubric: </h3>
+<blockquote> <a href="PA1_rubric.html" target="_blank"> PA1 Grading Rubric</a>
+</blockquote>
+</body>
+</html>

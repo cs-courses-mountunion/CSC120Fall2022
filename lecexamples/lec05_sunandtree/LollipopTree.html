@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>LollipopTree.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.literal {color: #0000e6}
+.ST3 {color: #009900; font-family: Monospaced; font-style: italic}
+.comment {color: #969696}
+.ST2 {color: #009900}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">H:\CSC120\Java\lec05\src\LollipopTree.java</td></tr></table>
+<pre>
+ 1 
+ 2 <span class="literal">import</span> java.awt.Color;
+ 3 <span class="literal">import</span> java.awt.Graphics;
+ 4 
+ 5 <span class="comment">/*</span>
+ 6 <span class="comment"> * To change this license header, choose License Headers in Project Properties.</span>
+ 7 <span class="comment"> * To change this template file, choose Tools | Templates</span>
+ 8 <span class="comment"> * and open the template in the editor.</span>
+ 9 <span class="comment"> */</span>
+10 
+11 <span class="comment">/**</span>
+12 <span class="comment"> *</span>
+13 <span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">cindricbb</span>
+14  <span class="comment">*/</span>
+15 <span class="literal">public</span> <span class="literal">class</span> <span class="ST1">LollipopTree</span> {
+16     
+17     <span class="literal">private</span> Integer <span class="ST2">anchorX</span>, <span class="ST2">anchorY</span>;
+18     
+19     <span class="literal">public</span> <span class="ST1">LollipopTree</span>(Integer x, Integer y) {
+20         <span class="ST2">anchorX</span> = x;
+21         <span class="ST2">anchorY</span> = y;
+22     } <span class="comment">// end of constructor</span>
+23     
+24     <span class="literal">public</span> <span class="literal">void</span> <span class="ST1">draw</span>(Graphics g) {
+25         g.setColor(<span class="literal">new</span> Color(102, 51, 0));
+26         g.fillRect(<span class="ST2">anchorX</span>+60, <span class="ST2">anchorY</span>+20, 30, 150);
+27         g.setColor(Color.<span class="ST3">GREEN</span>);
+28         g.fillOval(<span class="ST2">anchorX</span>, <span class="ST2">anchorY</span>, 150, 80);
+29     } <span class="comment">// end of draw method</span>
+30     
+31 } <span class="comment">// end of class LollipopTree</span>
+32 
+</pre></body>
+</html>

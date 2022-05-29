@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>MUPanel.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.ST0 {font-family: Monospaced; font-weight: bold}
+.comment {color: #969696}
+.ST1 {color: #009900}
+.ST4 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.ST2 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST3 {font-family: Monospaced; font-style: italic}
+.literal {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">H:\CSC120\Java\lec09\src\MUPanel.java</td></tr></table>
+<pre>
+  1 <span class="comment">/* CSC 120 Lecture # 8 &amp; 9</span>
+  2 <span class="comment"> * Blase B. Cindric</span>
+  3 <span class="comment"> * </span>
+  4 <span class="comment"> *</span>
+  5 <span class="comment"> * Project Description:</span>
+  6 <span class="comment"> *    a sample program showing how operators work with various</span>
+  7 <span class="comment"> *    data types</span>
+  8 <span class="comment"> *</span>
+  9 <span class="comment"> */</span>
+ 10 <span class="literal">import</span> java.awt.*;
+ 11 <span class="literal">import</span> javax.swing.*;
+ 12 
+ 13 <span class="literal">public</span> <span class="literal">class</span> <span class="ST0">MUPanel</span> <span class="literal">extends</span> JPanel {
+ 14 
+ 15     <span class="comment">// 1. Declare private objects here:</span>
+ 16     
+ 17     <span class="literal">private</span> Integer <span class="ST1">x</span>, <span class="ST1">y</span>, <span class="ST1">z</span>, <span class="ST1">average</span>;
+ 18     <span class="literal">private</span> Double <span class="ST1">m</span>, <span class="ST1">n</span>, <span class="ST1">q</span>;
+ 19     <span class="literal">private</span> String <span class="ST1">word</span>;
+ 20 
+ 21     <span class="comment">// constructor method</span>
+ 22     <span class="literal">public</span> <span class="ST0">MUPanel</span>() {
+ 23         setLayout(<span class="literal">null</span>);
+ 24         setPreferredSize(<span class="literal">new</span> Dimension(800, 100));
+ 25         setName(<span class="string">&quot;</span><span class="string">Mount Union Java Program</span><span class="string">&quot;</span>);
+ 26         setUp();
+ 27         setBackground(Color.<span class="ST2">WHITE</span>);
+ 28 
+ 29         <span class="comment">// 2. Instantiate objects here by calling &quot;new&quot;:</span>
+ 30         
+ 31         <span class="ST1">x</span> = 47;
+ 32         <span class="ST1">y</span> = <span class="ST1">x</span> + 2;
+ 33         <span class="ST1">z</span> = <span class="ST1">x</span> - 39;
+ 34         
+ 35         <span class="ST1">m</span> = 15.5;
+ 36         <span class="ST1">n</span> = 2*<span class="ST1">m</span>;
+ 37         
+ 38         <span class="ST1">word</span> = <span class="string">&quot;</span><span class="string">Aardvark</span><span class="string">&quot;</span>;
+ 39         
+ 40         <span class="ST1">m</span> = Math.<span class="ST3">sqrt</span>(100);
+ 41         
+ 42         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">x = </span><span class="string">&quot;</span>);
+ 43         System.<span class="ST2">out</span>.println(<span class="ST1">x</span>);
+ 44         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">y = </span><span class="string">&quot;</span>);
+ 45         System.<span class="ST2">out</span>.println(<span class="ST1">y</span>);
+ 46         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">z = </span><span class="string">&quot;</span>);
+ 47         System.<span class="ST2">out</span>.println(<span class="ST1">z</span>);
+ 48         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">m = </span><span class="string">&quot;</span>);
+ 49         System.<span class="ST2">out</span>.println(<span class="ST1">m</span>);
+ 50         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">n = </span><span class="string">&quot;</span>);
+ 51         System.<span class="ST2">out</span>.println(<span class="ST1">n</span>);
+ 52         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">word = </span><span class="string">&quot;</span>);
+ 53         System.<span class="ST2">out</span>.println(<span class="ST1">word</span>);
+ 54         
+ 55         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">====================</span><span class="string">&quot;</span>);
+ 56         
+ 57         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">3 / 5 = </span><span class="string">&quot;</span>);
+ 58         System.<span class="ST2">out</span>.println( 3/5 );
+ 59         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">3 % 5 = </span><span class="string">&quot;</span>);
+ 60         System.<span class="ST2">out</span>.println( 3%5 );
+ 61         
+ 62         System.<span class="ST2">out</span>.println();
+ 63         
+ 64         System.<span class="ST2">out</span>.print(<span class="string">&quot;</span><span class="string">3.0 / 5 = </span><span class="string">&quot;</span>);
+ 65         System.<span class="ST2">out</span>.println( 3.0 / 5);
+ 66         
+ 67         <span class="ST1">z</span> = 1500/3;
+ 68         System.<span class="ST2">out</span>.println(<span class="ST1">z</span> + <span class="string">&quot;</span><span class="string"> * 3 = </span><span class="string">&quot;</span> + <span class="ST1">z</span>*3);
+ 69         
+ 70         System.<span class="ST2">out</span>.println();
+ 71         
+ 72         System.<span class="ST2">out</span>.println(<span class="string">&quot;</span><span class="string">The average of </span><span class="string">&quot;</span> + <span class="ST1">x</span> + <span class="string">&quot;</span><span class="string"> and </span><span class="string">&quot;</span>
+ 73                 + <span class="ST1">y</span> + <span class="string">&quot;</span><span class="string"> is </span><span class="string">&quot;</span> + ( (<span class="ST1">x</span>+<span class="ST1">y</span>)/2 ));
+ 74         
+ 75     } <span class="comment">// end of constructor</span>
+ 76     
+ 77     
+ 78     @Override
+ 79     <span class="literal">public</span> <span class="literal">void</span> <span class="ST0">paintComponent</span>(Graphics g) {
+ 80         <span class="literal">super</span>.paintComponent(g); <span class="comment">// This line must be first in this method!</span>
+ 81 
+ 82         <span class="comment">// 3. Call methods of objects here:</span>
+ 83 
+ 84                 
+ 85     } <span class="comment">// end of paintComponent()</span>
+ 86     
+ 87     
+ 88     
+ 89        
+ 90     
+ 91     
+ 92     
+ 93     <span class="comment">/**</span><span class="comment">*********************************************</span>
+ 94 <span class="comment">     * </span><span class="comment">Do</span> <span class="comment">NOT</span> <span class="comment">change</span> <span class="comment">or</span> <span class="comment">delete</span> <span class="comment">anything</span> <span class="comment">below</span> <span class="comment">here</span><span class="comment">!</span>
+ 95 <span class="comment">     **********************************************</span><span class="comment">*/</span>
+ 96     <span class="literal">public</span> <span class="literal">void</span> <span class="ST0">setUp</span>() {
+ 97         <span class="literal">for</span> (Component c: getComponents())
+ 98             c.setSize(c.getPreferredSize());
+ 99         JFrame f = <span class="literal">new</span> JFrame(getName());
+100         f.setContentPane(<span class="literal">this</span>);
+101         f.setDefaultCloseOperation(JFrame.<span class="ST2">EXIT_ON_CLOSE</span>);
+102         f.pack();
+103         f.setVisible(<span class="literal">true</span>);    
+104     }
+105 
+106     <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST4">main</span>(String args[]){<span class="literal">new</span> MUPanel();}
+107 
+108 } <span class="comment">// end of class MUPanel</span>
+109 
+</pre></body>
+</html>
