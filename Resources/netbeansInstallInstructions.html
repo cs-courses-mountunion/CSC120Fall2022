@@ -125,7 +125,7 @@
       </section>
       <section id="installation-instructions">
         <h2>Installing Course Software</h2>
-        <p> You can set up Apache Netbeans application on
+        <p> You can set up the Apache Netbeans application on
         your own Windows 10 or Mac computer.
         Start by opening this current instruction page in a browser on the computer you want to install the software on.
         </p> 
@@ -146,7 +146,7 @@
           those versions will work with our textbook.-->
           If you have an older version of Netbeans already installed,
           it is recommended that you uninstall it before you follow 
-          the directions below to install Netbeans 12.2;
+          the directions below to install Netbeans 14;
           there are different details depending on whether 
           your computer is  
           <a href="#windows10">Windows 10</a>
@@ -154,38 +154,40 @@
           <a href="#mac">Mac</a>.
           </p>
           <p>
-          <h3 id="windows10">Install Netbeans 12.2 on a Windows 10 computer</h3>
+          <h3 id="windows10">Install Netbeans 14 on a Windows 10 computer</h3>
           <ol>
-            <li>Download OpenJDK11/HotSpot from 
-            <a href="https://adoptopenjdk.net/" target="_blank"
-            >AdoptOpenJDK</a>.
+            <li>Download Eclipse Temurin jdk-16.02+7 for Windows x64 from the
+            <a href="https://adoptium.net/temurin/releases/?version=16" target="_blank"
+            >Adoptium download site</a>.&nbsp; When you click this link, scroll down and choose the .msi version for Windows x64 platform, as shown in this image:<br/>
+            <img style="margin-top: 1em; margin-bottom: 1em" src="JDKdownload01.png">
+			<br/>
             Start the installation process by double-clicking the downloaded msi file.
-            Press <strong>Next</strong>, accept the license and press  <strong>Next</strong> again, 
-            which should bring you to the screen below; 
-            at this point select also the <strong>Set JAVA_HOME variable</strong> feature, 
+            Proceed through the installation process by clicking <strong>Next</strong> one or more times, accepting the license agreement if you are asked, 
+            until you see the screen below; 
+            at this point select also the <strong>Set JAVA_HOME variable</strong> feature to be installed, 
             in addition to the other two features already selected,
-            then press <strong>Next</strong> then <strong>Install</strong> then 
-            <strong>Yes</strong> and finally <strong>Finish</strong>.
+            then press <strong>Next</strong> and complete the installation process.
             </li>
-            <img style="margin-top: 1em; margin-bottom: 1em" src="AdoptOpenJDK11-custom-setup.png">
-            <li><p>Only after you have installed OpenJDK11 properly can you 
-              successfully install Netbeans 12.2.
-              Once you have done so,
+            <!--img style="margin-top: 1em; margin-bottom: 1em" src="AdoptOpenJDK11-custom-setup.png"-->
+            <img style="margin-top: 1em; margin-bottom: 1em" src="Javahome01.png">
+            <li><p>Only after you have installed Temurin JDK16 properly can you 
+              successfully install Netbeans 14.
+              Once you have installed Temurin JDK16 following the previous set of instructions,
               download the Netbeans installer file
-              <a href="https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/12.2/Apache-NetBeans-12.2-bin-windows-x64.exe" target="_blank"
-              >Apache-NetBeans-12.2-bin-windows-x64.exe</a>;
+              <a href="https://www.apache.org/dyn/closer.cgi/netbeans/netbeans-installers/14/Apache-NetBeans-14-bin-windows-x64.exe" target="_blank"
+              >Apache-NetBeans-14-bin-windows-x64.exe</a>;
               this link and other information can be found on the 
-            <a href="https://netbeans.apache.org/download/nb122/nb122.html" target="_blank"
-            >Dowloading Apache Netbeans 12.2</a> page. 
-            (Note that you will need to click on the suggested mirror site link.)
-            Run the downloaded file to install Apache Netbeans 12.2, 
+            <a href="https://netbeans.apache.org/download/nb14/nb14.html" target="_blank"
+            >Dowloading Apache Netbeans 14</a> page. 
+            &nbsp; 
+            Run the downloaded file to install Apache Netbeans 14, 
             accepting the license and any default options.
             </p>
             <p>
-            If you see the following dialog box pop up, 
+            If you see a dialog box similar to the following one pop up, 
             you didn't select the <strong>Set JAVA_HOME variable</strong> feature correctly
-            when you installed OpenJDK11,
-            so you will have to run the OpenJDK11 installer again 
+            when you installed OpenJDK16,
+            so you will have to run the OpenJDK16 installer again 
             (it's probably in the Downloads folder) 
             and change the features selected so that the 
             <strong>Set JAVA_HOME variable</strong> feature is correctly selected,
@@ -196,33 +198,33 @@
           </ol>
         </p>
         <p>
-          <h3 id="mac">Install Netbeans 12.2 on a Mac computer</h3>
+          <h3 id="mac">Install Netbeans 14 on a Mac computer</h3>
           <ol>
-            <li>Download OpenJDK11/HotSpot from 
-            <a href="https://adoptopenjdk.net/" target="_blank"
-            >AdoptOpenJDK</a>.
+            <li>Download Eclipse Temurin jdk-16.02+7 for macOS x64 from the
+            <a href="https://adoptium.net/temurin/releases/?version=16" target="_blank"
+            >Adoptium download site</a>.&nbsp; On this page, select the .pkg file for macOS x64 platforms.&nbsp; This will download the installation file.&nbsp;
             Start the installation process by clicking on the downloaded pkg file to open it, 
             pressing the <strong>Continue</strong> button,
             agreeing to the license,
             then pressing the <strong>Install</strong> button and providing your password to allow the install.
             </li>
-            <li><p>Only after you have installed OpenJDK11 properly can you 
-              successfully install Netbeans 12.2.
-              Once you have done so,
+            <li><p>Only after you have installed Temurin JDK16 properly can you 
+              successfully install Netbeans 14.
+              Once you have done the JDK16 install,
               download the installer
-              <a href="https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/12.2/Apache-NetBeans-12.2-bin-macosx.dmg" target="_blank"
-              >Apache-NetBeans-12.2-bin-macosx.dmg</a>;
+              <a href="https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/14/Apache-NetBeans-14-bin-macosx.dmg" target="_blank"
+              >Apache-NetBeans-14-bin-macosx.dmg</a>;
               this link and other information can be found on the 
-            <a href="https://netbeans.apache.org/download/nb122/nb122.html" target="_blank"
-            >Dowloading Apache Netbeans 12.2</a> page. 
-            (Note that you will need to click on the suggested mirror site link.)
+            <a href="https://netbeans.apache.org/download/nb14/nb14.html" target="_blank"
+            >Dowloading Apache Netbeans 14</a> page. 
+            &nbsp; 
             Click to open the downloaded dmg file, then double-click the pkg file that appears in the Finder
-            to open the installer for Apache Netbeans 12.2. 
+            to open the installer for Apache Netbeans 14. 
             Follow the prompts, agreeing to the license and entering your password as for the installation 
-            of OpenJDK11.
+            of Temurin JDK16.
             You may then eject the dmg file from the desktop.
             A Netbeans folder should appear in the Applications folder,
-             and inside of that is the Apache Netbeans 12.2 application. 
+             and inside of that is the Apache Netbeans 14 application. 
             </p>
             </li>
           </ol>
