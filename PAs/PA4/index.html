@@ -23,8 +23,10 @@
 		<blockquote>
     		Using the class definition you developed for Programming Assignment # 2, create a Java 
 			application that provides a Graphical User Interface that allows the user to enter
-			data values in TextFields for each property of the class, and displays output as described
-			in these instructions in a scrollable TextArea.
+			data values in TextFields for each property of the class, uses those values to instantiate
+			an object from your class, and displays the results of the <b><code>toString()</code></b>
+			method of your class in a TextArea as described
+			in these instructions.
 		</blockquote>
 
         <h3>Instructions:</h3>	
@@ -104,8 +106,9 @@
     					<ol type="i"> 
 						  <li> retrieve all data from the TextFields into String objects </li>
 						  <li> for each of the data items that represents a numeric value, you will need to convert the input String into an Integer or a Double data type for use in the next step</li>
-						  <li> instantiate a new object from your class, using the the values from the previous two steps</li>
-						  <li> display the results of the <code><b>toString</b></code> method called for the new object in the TextArea of the User Interface</li>
+						  <li> declare an object from your class</li>
+						  <li> instantiate the object from your class that you just declared, using the values from the first two steps</li>
+						  <li> <code><b>append</b></code> the results of the <code><b>toString</b></code> method called for the new object in the TextArea of the User Interface</li>
 						  <li> call the "getter" method of the new object for one of the numeric properties in your class, and add the value retrieved 
 						       to a "total" variable of the proper data type.</li>
 						  <li> compare the value retrieved in the previous step with a maximum and a minimum
