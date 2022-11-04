@@ -211,7 +211,7 @@ run
             <br />
             Hint:&nbsp; here is an example of code that sets the <code>Integer</code>
             variable <code>randNum</code>
-            to a random integer in the range from 0 to <em><b>upper</b></em>:
+            to a random integer in the range from 0 to <em><b>upper</b></em> &ndash; 1:
 <b><pre>
     randNum = randGenerator.nextInt(upper);
 </pre></b>
@@ -265,8 +265,13 @@ run
 			   while the other RoundHeads remain stationary.
 		  </li>
 		  <li> <p>Now let's modify MUPanel so that the RoundHeads in the array move on the screen even if we aren't clicking the Move
-		       Roundheads button.&nbsp; To do this, copy the following code and paste it into MUPanel.java right above the comment that says,
-			   "Don't change anything below here":
+		       Roundheads button.&nbsp; To do this, start by modifying the class heading for the MUPanel class so that it looks like this:
+<pre>
+public class MUPanel extends JPanel implements Runnable {
+
+</pre>
+
+               Next, copy the following code and paste it into MUPanel.java right above the comment that says, "Don't change anything below here":
 <pre>
     private volatile Thread animator;
     private Integer animationDelay = 200;
@@ -294,11 +299,6 @@ run
     } // end of run()
 	
 </pre> 
-      Next, modify the class heading for the MUPanel class so that it looks like this:
-<pre>
-public class MUPanel extends JPanel implements Runnable {
-
-</pre>
       Then, switch to MUFrame and add two more buttons to the interface, one named "Start Animation" and
       the other named "Stop Animation".&nbsp; When the Start Animation button is clicked, you should call 
       <code>muPanel.start()</code>; when the Stop Animation button is clicked, you should call
