@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>PA 6 Rubric</title>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+<style>
+.writing {
+    font-family: /*'Waiting for the Sunrise', */'Rock Salt', cursive;
+	/*font-size: 1.5em;*/
+}
+</style>
+</head>
+
+<body bgcolor="#ffffff">
+
+<center><h2> CSC 120 &mdash;&mdash; 
+                                        <script type="text/javascript">
+                                        <!-- hide from older browsers 
+                                        var d = new Date();
+                                        var m = d.getMonth();
+                                        switch (m) {
+                                            case 0:  
+                                            case 1:  
+                                            case 2:  
+                                            case 3:  
+                                            case 4:  
+                                            case 5:  document.write("Spring "); break;
+                                            case 6:  
+                                            case 7:  
+                                            case 8:  
+                                            case 9:  
+                                            case 10: 
+                                            case 11: document.write("Fall "); break;
+                                        }
+                                        document.write(d.getFullYear());
+                                        // end hiding -->
+                                        </script>
+
+</h2>
+        <h3> Programming Assignment # 6 Grading Rubric </h3> 
+        <br/>
+        <h3> Name <u class="writing"> &nbsp; &nbsp; Dylan Zepp &nbsp; &nbsp; &nbsp; </u> </h3> </center>
+
+        <br/><br/>
+        
+        
+			    <table border="1" cellpadding="3" align="center">
+                    <tr>
+			            <th>Evaluation Item</th>
+                        <th>Points<br/>Earned</th>
+			            <th>Possible<br/>points</th>
+			        </tr>
+			        <tr>
+			            <td>CSC 120, PA 6, name, date, & description comments in MUPanel.java</td>
+                        <td align="center"><span class="writing">3</span></td>
+                        <td align="center">3</td>
+			        </tr>
+			        <tr>
+			            <td>The Description comment must include a discussion of the goal of the 
+						    program; what is the "hero" object attempting to accomplish?  Should 
+							the "hero" be moved to a certain screen area, attempt to "capture" 
+							all of the obstacles, or what?  </td>
+                        <td align="center"><span class="writing">3</span></td>
+			            <td align="center">3</td>
+			        </tr>
+			        <tr>
+			            <td>Project contains a "hero" class and one "hero" object that is drawn
+    						on screen and may be moved by button clicks or other GUI actions.  </td>
+                        <td align="center"><span class="writing">6</span></td>
+			            <td align="center">6</td>
+			        </tr>				
+			        <tr>
+			            <td> Project contains an "obstacle" class and an array of "obstacle" objects
+						     that are drawn on screen and have a different appearance from the 
+							 "hero" object. </td>
+                        <td align="center"><span class="writing">6</span></td>
+			            <td align="center">6</td>
+			        </tr>				
+			        <tr>
+			            <td> "hero" object moves correctly according to labels on the buttons.  <br/>
+						    <span class="writing">&nbsp; &nbsp; No buttons implemented</span></td>
+                        <td align="center"><span class="writing">0</span></td>
+			            <td align="center">7</td>
+			        </tr>
+			        <tr>
+			            <td>all "obstacles" move, grow and/or shrink when every button controlling the "hero" is clicked.  <br/>
+						    <span class="writing">&nbsp; &nbsp; No buttons implemented</span></td>
+                        <td align="center"><span class="writing">0</span></td>
+			            <td align="center">8</td>
+			        </tr>
+			        <tr>
+			            <td> Program detects when "hero" is overlapping any "obstacle" object and responds appropriately.  <br/>
+						    <span class="writing">&nbsp; &nbsp; Program doesn't do this</span></td></td>
+                        <td align="center"><span class="writing">0</span></td>
+			            <td align="center">5</td>
+			        </tr>
+			        <tr>
+			            <td>If "hero" reaches the goal, a message to that effect is displayed on screen.  <br/>
+						    <span class="writing">&nbsp; &nbsp; Program doesn't do this</span></td></td>
+                        <td align="center"><span class="writing">0</span></td>
+			            <td align="center">4</td>
+			        </tr>
+			        <tr>
+			            <td>Your code is easy to read, and indented consistently. </em>.</td>
+                        <td align="center"><span class="writing">3</span></td>
+			            <td align="center">3</td>
+			        </tr>
+			        <tr>
+			            <td>Deductions (if any) <br/>
+						    <span class="writing">&nbsp; &nbsp; Program didn't run as submitted &mdash; two changes were needed to make it run:<br/>&nbsp; &nbsp;
+							In hero.java, the following statement needed to be inserted before lines 21 and 22:
+<pre>
+    loc = new Random();
+</pre>
+                            Then in MUPanel.java, the following code was needed starting at line 36:
+<pre>
+        clown = new obstacle[10];
+        for (int c = 0; c &lt; clown.length; c++) {
+            clown[c] = new obstacle(c*55 + 30, c*20+30);
+        }
+</pre>
+                            When those changes were made, program output looks like this:<br/>
+							<img src="PA6_DylanZscreenshot.png" width="50%" height="50%" />
+							</span></td></td>
+                        <td align="center"><span class="writing">&ndash;2</span></td>
+			            <td align="center">&nbsp;</td>
+			        </tr>
+			        <tr>
+			            <th align="right">Total Points ====> </th>
+                        <th> <span class="writing">19</span> </th>
+			            <th align="center">45</th>
+			        </tr>
+			    </table>
+			    
