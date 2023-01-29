@@ -45,8 +45,8 @@ public class MUPanel extends JPanel {
         g.drawArc(325, 175, 75, 75, 75, 210);
         
         g.setColor(Color.RED);
-        g2d.setStroke( new BasicStroke(15) ); // 10 pixels for line width;
-        // now all lines drawn with g will be 10 pixels wide
+        g2d.setStroke( new BasicStroke(15) ); // 15 pixels for line width;
+        // now all lines drawn with g will be 15 pixels wide
         g.drawLine(450, 50, 550, 50);
         g.drawLine(450, 50, 450, 250);
         g.drawLine(450, 125, 525, 125);
