@@ -198,6 +198,15 @@ g.setColor(&nbsp;new&nbsp;Color(&nbsp;255,&nbsp;255,&nbsp;153&nbsp;)&nbsp;);
 	      and <code>ThingTwo</code> to add other shapes or visual items to your scene as
 		  an enhancement.
       </li>	  <br/>
+	  
+	  <li>By default, the lines that are drawn by <code><b>g.drawLine</b></code>, <code><b>g.drawRect</b></code>,
+    	  <code><b>g.drawOval</b></code> and <code><b>g.drawArc</b></code> are only 1 pixel wide.&nbsp; If you want to make the line thickness wider when any of these
+		  methods is used, you have to set the stroke property of the Graphics window using a technique that involves
+		  associating an object of the <code><b>Graphics2D</b></code> class with the Graphics window g that you use to draw things.&nbsp;
+		  See the <a href="ThickLineDemo/ThickLineDemo.html" target="_blank"> Thick Line Demo page</a> for an example of
+		  how to do this.	  
+	  </li><br/>
+	  
       <li>Another possible enhancement could be using an irregular
 polygon
 (see the <a href="PolygonDemo/PolygonDemo.html">Polygon Demo</a> page).</li> <br/>
