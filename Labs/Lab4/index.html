@@ -85,8 +85,34 @@
 		 Ask your instructor for help if you can't
 		 figure out all the places where <code>currency.format(...)</code> is called.
 		 <br/><br/> </li>
+		 
+    <li> Notice the comment toward the bottom of the <code>workWithClothingItems</code> method that says 
+	    "UNCOMMENT THE FOLLOWING FOUR LINES IN STEP 4 OF THE LAB DIRECTIONS".&nbsp; Remove the // from the front of those 
+		four lines, and run the program.&nbsp; You should see a prompt message at the bottom of the Java Console 
+		that says "Enter the discount percentage:".&nbsp; The program is waiting for you to enter a number between 0 and 100;
+		click in the Java Console, type in 50, and then press the [Enter] key.&nbsp; Notice that the program accepts
+		your input as the discount to take off the price of the pants, and shows how much the pants would cost if
+		you had that much of a discount.&nbsp; Run the program a couple more times, and try a 25% or a 75% discount to see
+		if it works correctly.  DON'T TYPE THE % SIGN WHEN YOU ENTER THE PERCENTAGE, JUST THE NUMBER.<br/><br/> </li>		 
 
-    <li> Right-click on the <b>src</b> folder of your project in the NetBeans file tree in the upper-left
+    <li> Using the <code>Scanner</code> class is just one of the ways we can accept keyboard input in Java.&nbsp; 
+	     To see another way to do it, replace the four lines you uncommented in the previous step with the following two lines:
+<pre>
+        String userInput = JOptionPane.showInputDialog("Enter the discount percentage: ");
+        discountPct = Double.parseDouble(userInput);
+</pre>
+         Now run the program, and you'll see a dialog box pop up on the screen that asks you to enter the discount percentage.&nbsp; 
+		 Enter 20 and either press [Enter] or click the "OK" button in the dialog, and you should see the price after a 20% discount
+		 has been applied.&nbsp; Pretty nice, isn't it?&nbsp; Input from a dialog box is limited to String data, so in order for
+		 the input to converted to a Double value that can be used in multiplication, we have to convert it with that 
+		 <code>parseDouble</code> statement.&nbsp; We'll explain that later in the course.<br/><br/>
+		 
+		 Before moving on in the lab, turn the two lines you pasted above into comments by putting // in front of them.&nbsp; Run the program
+		 now and it should show the output if there was a 0% discount (in other words, no discount at all).
+		 <br/><br/> </li>		 
+
+    <li> OK, so now we will write a new class definition for a different type of thing that can be bought or sold, and add processing
+	     for objects from that class to our MUPanel.java program.&nbsp; Right-click on the <b>src</b> folder of your project in the NetBeans file tree in the upper-left
          panel of the IDE, and choose "New | Java Class" to create a new class file in your project &ndash;
 		 use the name <b>Coffee</b> for this new class file.<br/><br/> </li>
 
@@ -214,10 +240,11 @@
         System.out.println("Price per ounce for " + cup4.getSize() + "=$ " + currency.format(pricePerOunce) );
 		
         //*********************** 
-        //* REDUCE THE PRICE OF THE cup1 and cup5 OBJECTS TO 25% OF WHAT THEY WERE
+        //* REDUCE THE PRICE OF THE cup1 and cup5 OBJECTS BY A DISCOUNT % ENTERED BY THE USER
         //* USE THE setPrice AND getPrice METHODS DO TO THIS
         //*********************** 
 				
+        Double discountPct = 0.0;
 
 
 
@@ -243,8 +270,8 @@
 		 method accepts no parameters.
 		 <br/><br/>
 		 
-         Run the program and examine the first 7 lines of output &ndash; the sixth and seventh lines 
-		 of output should have
+         Run the program and examine the first 7 lines of output underneath the line of ========'s &ndash; the sixth and seventh lines 
+		 of output for the Coffee objects should have
 	     the correct information for the difference of the prices and ounces for the various sizes of
 		 coffees. <br/><br/> </li>
 		 
@@ -258,7 +285,7 @@
 		 <br/><br/>
 		 
          Find the line in the MUPanel constructor method that says 
-		 "<code>setPreferredSize(new Dimension(250,100));</code>" and change the numbers so that the
+		 "<code>setPreferredSize(new Dimension(650, 100));</code>" and change the numbers so that the
 		 preferred size is 800 x 600.&nbsp; Next, right-click on the following file and save it
 		 in the <b>src</b> folder of your project. <br/><br/>
 
@@ -303,16 +330,20 @@
 		 Ask your instructor for help if you need it.
 	    <br/><br/></li>
  
-    <li> After the comment in the <code>workWithCoffeeObjects</code> method, insert code that will set
-	     the prices of <code>cup1</code> and <code>cup5</code> to be 25% of what they were.&nbsp; To do this, call
+    <li> After the comment in the <code>workWithCoffeeObjects</code> method and the line that declares <code>discountPct</code>,
+     	 insert code that will set
+	     the prices of <code>cup1</code> and <code>cup5</code> to be reduced by a percentage that is entered by the user
+		 on the keyboard.&nbsp; To do this, call
 		 <code>setPrice</code> and <code>getPrice</code> for each of the objects, and use the proper
-		 calculation to determine what is 25% of the old price.&nbsp; See the <code>workWithClothingItems</code>
-		 method for an example of how to do this.&nbsp; DON'T DO THE MATH IN YOUR HEAD -- make the computer
+		 calculation to determine what is the new price based on the original price and the discount percentage.&nbsp; 
+		 See the <code>workWithClothingItems</code>
+		 method for an example of how to do this.&nbsp; Use the technique we saw in step 5 to cause a dialog to pop up on the screen
+		 and allow the user to enter the <code>discountPct</code> value.&nbsp; DON'T DO THE MATH IN YOUR HEAD -- make the computer
 		 carry out the calculation by using arithmetic operators in Java.<br/><br/> 
 		 
-		 When you run the program now, the last 5 lines output should show prices that are 25% of their
-		 original values for <code>cup1</code> and <code>cup5</code>, with the others being the same as
-		 they were originally.&nbsp; Don't worry about the prices showing more than 2 decimal places at this time 
+		 When you run the program now, the last 5 lines output should show prices that are reduced by whatever percentage was
+         entered by the user on the keyboard for <code>cup1</code> and <code>cup5</code>, with the others being the same as
+		 they were originally.&nbsp; Don't worry if the prices show more than 2 decimal places at this time 
 		 &mdash; we'll see how to limit the number of decimal places printed for a <code>Double</code> value
 		 sometime later this semester.<br/><br/> </li>
 		 

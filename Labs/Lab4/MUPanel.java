@@ -16,18 +16,20 @@ public class MUPanel extends JPanel  {
     
     private ClothingItem myFavoriteShirts, otherShirts, bestJeans, jeans2,
                          blackShoes, flipFlops;
+    
 
 
     public MUPanel() {
         setLayout(null);
-        setPreferredSize(new Dimension(250, 100));
+        setPreferredSize(new Dimension(650, 100));
         setName("CSC 120 Lab # 4");
         setBackground(Color.WHITE); 
+        
         
         myFavoriteShirts = new ClothingItem("Old Navy button-downs", "long-sleeved shirt", 25.50, 2);
         otherShirts    = new ClothingItem("A & F tees", "short-sleeved shirt", 35.00, 4);
         bestJeans       = new ClothingItem("Levis 550s", "pair of pants", 47.75, 3);
-        jeans2          = new ClothingItem("Wranglers", "pair of pants", 28.90, 1);
+        jeans2          = new ClothingItem("Wranglers", "pair of pants", 40.00, 1);
         blackShoes      = new ClothingItem("Bass Loafers", "pair of shoes", 74.80, 1);
         flipFlops       = new ClothingItem("Orange Flip Flops", "pair of shoes", 9.95, 5);
 
@@ -39,7 +41,8 @@ public class MUPanel extends JPanel  {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        g.drawString("Look in Java Console for output", 10, 50);
+        g.setFont( new Font("SansSerif", Font.PLAIN, 24));
+        g.drawString("Look in Java Console for output", 100, 60);
         
     } // end of paintComponent()
 
@@ -67,14 +70,6 @@ public class MUPanel extends JPanel  {
         System.out.println();
         System.out.println("I spent $" + currency.format(totalSpent) + " to buy all of my tee shirts");
         
-        // reduce price of jeans2 object by 50%
-        Double originalPrice, updatedPrice;
-        originalPrice = jeans2.getPrice();
-        updatedPrice = originalPrice * 0.50 ;
-        jeans2.setPrice( updatedPrice );
-        System.out.println();
-        System.out.println("If I had gotten my " + jeans2.getName()
-                + " pants at a half-price sale, they would have cost $" + currency.format(jeans2.getPrice()));
         
         // change the type of the shoe objects
         blackShoes.setType("pair of dress shoes");
@@ -82,6 +77,27 @@ public class MUPanel extends JPanel  {
         System.out.println();
         System.out.println("Going to class I wear: " + blackShoes.toString() );
         System.out.println("For the beach I wear: " + flipFlops.toString() );
+        
+        // reduce price of jeans2 object by a discount %
+        Double discountPct = 0.0;
+        
+        //////////////////////////////////////////////////////////////////////
+        // UNCOMMENT THE FOLLOWING FOUR LINES IN STEP 4 OF THE LAB DIRECTIONS
+
+//        Scanner kbdInput = new Scanner(System.in);
+//        System.out.print("\n");
+//        System.out.print("Enter the discount percentage: ");
+//        discountPct = kbdInput.nextDouble();
+
+        Double originalPrice, updatedPrice;
+        originalPrice = jeans2.getPrice();
+        updatedPrice = originalPrice * (100.0 - discountPct)/100.0 ;
+        jeans2.setPrice( updatedPrice );
+
+        System.out.println();
+        System.out.println("The original price of the " + jeans2.getName() + " pants was " + currency.format(originalPrice));
+        System.out.println("If I had gotten my " + jeans2.getName()
+                + " pants at a " + discountPct + "% discount, they would have cost $" + currency.format(jeans2.getPrice()));
 
     } // end of workWithClothingItems
     
