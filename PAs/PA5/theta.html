@@ -25,7 +25,7 @@ and</li>
              with a <code>for</code> loop, and is drawn in successive stages based on the
 			 number of times the user has clicked on a button on screen.&nbsp; For an example
 			 of how your program should work, 
-	<a href="Samples/PA5PatternEpsilon/index.html" target="_blank"> click here</a>.
+	<a href="Samples/PA5PatternTheta/index.html" target="_blank"> click here</a>.
 </blockquote>
 
 <h3> Instructions and Requirements: </h3>
@@ -60,8 +60,7 @@ The GUI
 	    value of the <code>numberOfReps</code> property.
 	   </p>
   </li>
--------------------------------------------------------------------------->
-  
+--------------------------------------------------------->  
   <li>
     <p>You should have
        a <code>for</code> loop in the <code>paintComponent</code> method of MUPanel that will draw one
@@ -74,7 +73,8 @@ The GUI
 	   <code>height</code> may need to be changed, based on how your assigned pattern changes.
 	   </p>
   </li>
-<!-- --------------------------------------------------------------------------
+<!-- ----------------------------------------------------------------
+
   <li>
     <p>
 	   Define three methods in the MUPanel class in addition to the constructor and <code>paintComponent</code>:
@@ -105,11 +105,21 @@ The GUI
 	   and then <code>muPanel.repaint()</code> should be called.
 	</p>
   </li>
--------------------------------------------------------------------------->
+----------------------------------------------------------->
   <li>
     <p>
        Each student in the class has a unique pattern to work on &mdash; you MUST use the pattern that
 	   has been assigned to you for this project.	   
+	</p>
+  </li>
+  <li>
+    <p>
+       Hint:&nbsp; for this pattern, you will want to set the line width in the <code>paintComponent</code> method to 3.&nbsp; You can do this by inserting the following two statements in your <code>paintComponent</code> method immediately <u>before</u> the <code>for</code> loop heading:
+<pre>
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke( new BasicStroke(3) );         
+</pre>	   
+       See the <a href="../PA1/ThickLineDemo/ThickLineDemo.html" target="_blank"> Changing the Line Thickness Demo</a> for more information.
 	</p>
   </li>
 </ol>
