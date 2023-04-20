@@ -35,7 +35,7 @@
             </ol>
         </li>
 
-        <li><b>Use the <code>split</code> method to break each line of input into separate values.</b><br /><br />
+        <li><b>Write a method that uses <code>split</code> to break each line of input into separate values.</b><br /><br />
 
             <ol>
 
@@ -45,14 +45,19 @@
 					Each line of input will contain three values for a different type of instrument in the
 					orchestra:&nbsp; the name of the instrument, the orchestra section to which the instrument
 					belongs, and the number of musicians that play that instrument this season.&nbsp; Each of
-					these values is separated from each other by a semicolon.&nbsp; 
-				    <br/><br/>
-					To split each line of input into three pieces, we can use the following code in the
-					<code>for</code> loop that displays each line in the output area:
+					these values is separated from each other by a semicolon.&nbsp; Here are some examples of the format that will be used for this data:
 <pre>
-    String[] part = lineOfInput[index].split(";");
+French Horn; Brass; 3
+Cornet; Brass; 5
+Timpani; Percussion; 2
+</pre>
+                    This example means that there are 3 French Horn players in the Brass section of the orchestra, 5 Cornet players in the Brass section, and 2 Timpanis (Kettle Drums) in the Percussion section.&nbsp; Our goal in this program is to use this text input data to create an array of Instrument objects that we can process.
+				    <br/><br/>
+					To split a String object named <code>myString</code> into an array of Strings, using a semicolon as the delimiter, we can use the following code:
+<pre>
+    String[] part = myString.split(";");
 </pre>					
-                    Now we have an array of <code>String</code>s called <code>part</code>, where element 0
+                    Then we would have an array of <code>String</code>s called <code>part</code>, and if <code>myString</code> contained one of the sample lines above, element 0
 					of the array contains the instrument name, element 1 contains the instrument's section
 					and element 2 contains the number of musicians for this instrument.
 					<br><br>
@@ -67,32 +72,37 @@
 					you understand how it is written. <br /><br />
                 </li>
 
-				<li>At the top of the <b>MUFrame</b> class, declare an array of Instrument objects.&nbsp; Then, 
+				<li>At the top of the <b>MUFrame</b> class, declare an array of Instrument objects with the specific name <b><code>instArray</code></b>.&nbsp; Then, 
 				    immediately before the <code>for</code> loop in the actionPerformed method 
-				    for the processInput button, instantiate
-					the array of Instruments so that there are as many elements in this array as there are
+				    for the processInput button, instantiate this
+					array of Instruments so that there are as many elements in this array as there are
 					lines in the input.
                     <br/><br/>
 				</li>
 				
 				<li>Inside the <code>for</code> loop in the actionPerformed method for the processInput button,
+				    replace the <code>outputArea.append</code> statement that is in the loop with the following code:
+<pre>
+    instArray[index] = makeANewInstrument( lineOfInput[index] );
+    outputArea.append( "[" + index + "]: " + instArray[index].toString() + "\n" );
+</pre>
+                When you do this, NetBeans will give you an error, saying that <code>makeANewInstrument</code> is not defined.&nbsp; We need to write a method with this name in the program, and we will do that in the next step of these instructions.<br/><br/>
+				</li>
+				
+				<li>Scroll up in the program until you see the MUFrame constructor method.&nbsp; Notice that right below that, there is a method that is commented out.&nbsp; Uncomment those lines to reveal a method named <code>makeANewInstrument</code>.&nbsp; This method accepts one <code>String</code> parameter, and will return an <code>Instrument</code> object as its result.&nbsp; Your task in this step of the lab will be to write code to take a line of input, split it into pieces using the delimiter character, and then create a new <code>Instrument</code> object to be sent back as the return value for the method.<br/><br/>
+				
+				The first and last lines in the body of this method need to remain unchanged.&nbsp; Between those lines,
 				    do the following:
 					<ul>
-					    <li> split the input line into an array of Strings called <code>part</code>,
-						     using a semicolon as the delimiter (see the code example above) </li>
+					    <li> split the parameter of this method into an array of Strings called <code>part</code>,
+						     using a semicolon as the delimiter.&nbsp; See the code example in instruction B. 1) above. </li>
 						<li> <code> for (Integer p = 0; p &lt; part.length; p++) {<br/> &nbsp; &nbsp; part[p] = part[p].trim();<br/>} // end for</code> </li>
-						<li> instantiate element <code>index</code> of the array of <code>Instrument</code> objects, using the <code>part</code> array as the values to pass to the constructor method  </li>
+						<li> instantiate <code>answer</code>, using the <code>part</code> array as the values to pass to the constructor method  </li>
 							 <ul>
 							     <li> the first parameter for the constructor call should be &nbsp;<code>part[0]</code> </li>
 							     <li> the second parameter for the constructor call should be &nbsp;<code>part[1]</code> </li>
 							     <li> the third parameter for the constructor call should be &nbsp;<code>Integer.parseInt( part[2] )</code> </li>
 							 </ul>
-						<li> change the <code>append</code> call inside the loop to be this:
-<pre>
-    outputArea.append( "line " + index + ": " + instrumentArray[index].toString() + "\n" );
-</pre>
-						 (you may need to change the name <code>instrumentArray</code> in this
-						 sample to be the name you used in your program)</li>
 					</ul>
 				    <br>
 				</li>
