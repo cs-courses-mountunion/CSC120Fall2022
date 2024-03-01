@@ -128,37 +128,82 @@
             to use an array of <code>Book</code> objects, and the <code>Book</code>
             class definition is not supplied. Your task for this step of
             the lab is to provide a complete class definition for a <code>Book</code>
-            class, that allows the program to run correctly.<br />
+            class, that allows the program to run correctly.&nbsp; We will also learn about
+			the "Insert Code" feature of NetBeans that will do a lot of the work of
+			writing a new class definition for us.<br />
             <br />
             The <code>Book</code> class must have three (3) private
             data members: a <code>String</code> for the book's title, a
             <code>String</code> for the book's author, and an <code>Integer</code>
-            for the number of pages in the book. You must write a
-            minimum of three methods for this class: a constructor
-            method (to see the order of the parameters for the
-            constructor, refer to the statements in <code>fillArray</code>
-            that call the constructor), a method named <code>getNumPages()</code>
+            for the number of pages in the book.&nbsp; We also will need a constructor method
+			for the class, a <code>getNumPages()</code> method
             that returns the number of pages in a <code>Book</code>
-            object, and a <code>toString()</code> method that returns a
-            <code>String</code> formatted in this format:
+            object, three setter methods (one for each private data member of the <code>Book</code>
+			class), and a <code>toString()</code> method.<br/><br/>
+			
+			First of all, right-click on the <b>src</b> folder in the NetBeans project tree in the upper-left panel, and choose "New | Java Class" from the pop-up menu.&nbsp; Enter "Book" (without the quotes) as the name of the class and click the Finish button.&nbsp;  This creates an empty class definition.&nbsp; Inside the curly braces of the class definition, declare three properties or private data members: <code>String</code>s for the title and for the author of the book, and an Integer for the number of pages of the book (use the names <code>title</code>, <code>author</code> and <code>numPages</code> for these three properties.<br/><br/>
+		  </li>
+		  <li> Now we need to write methods for the class that should be a part of pretty much every
+		       class we write:&nbsp; a constructor, getters and setters, and a <code>toString</code> method.&nbsp; This is such a basic task that NetBeans includes code generation features to do this automatically for a class once we have declared the properties that the class will contain.&nbsp; We will use this code completion feature to save ourselves some time and work in getting the <code>Book</code> class to be operational.<br/><br/>
+			   
+			   Make sure there is at least one blank line between the last variable declaration in your class definition and the closing brace, and position the cursor on one of those blank lines.&nbsp; Then from the top-level NetBeans menu (the one with the words "File", "Edit", etc. at the top of the application), choose "Source | Insert Code", as seen here:<br/><br/>
+			   <img src="Lab9b/lab9bImage1.png" width="400" /> <br/><br/>
+			   
+			   A small pop-up menu will appear that is titled "Generate"; from the choices, select "Constructor...".&nbsp; Now you will see a dialog box that has a line for each of the properties that you defined for the class.&nbsp; Select all of the properties (you can either check all the checkboxes, or use the "Select All" button at the bottom), and then click the "Generate" button.&nbsp; Wow, how nice is this?&nbsp; Notice that NetBeans uses the same name for the properties and for the parameters of the constructor method, so the code must use the "this." notation that was discussed in class to resolve the naming confusion.&nbsp; This is a standard technique in Java programming.<br/><br/>
+		  </li>
+		  <li> NetBeans can also automatically generate getters and setters for us.&nbsp; Choose "Source
+		       | Insert Code" again, and this time choose "Getter..." from the Generate pop-up menu.&nbsp; Let's say for this program we will only need a <code>getNumPages</code> method; so that means that we should only check one checkbox in the dialog that appears, beside the <code>numPages</code> entry, and then when we click the Generate button only one getter is added to the class definition.<br/><br/>
+			   
+			   Choose "Source | Insert Code" another time, and choose "Setter...".&nbsp; We should add a setter for all three properties of the class, so do that now.<br/><br/>
+		  </li>
+		  <li> We need one more method to complete the <code>Book</code> class definition so we can run
+		       the starter program for Lab 9b &mdash; a <code>toString</code> method.&nbsp; NetBeans will generate a very generic toString for us, and then we can edit the method so that the output is exactly the way we want it.&nbsp; Choose "Source | Insert Code" now, then choose "toString..." from the pop-up menu.&nbsp; Be sure the checkboxes for all of the fields of the class are checked, and click "Generate".&nbsp; Notice that the code that NetBeans writes displays the name of the class, and then the name of each field followed by the value of the field.&nbsp; Let's see what the result of this <code>toString</code> method looks like....<br/><br/>
+		  </li>
+		  <li> Run the <b>MUPanel.jave</b> file now, and if you chose the proper names for the fields in
+		       the <code>Book</code> class, you should see the following output:<br/><br/>
+			   <img src="Lab9b/Lab9bScreenShot0.gif" width="500" /> <br/><br/>
+			   
+			   If you examine the code in <b>MUPanel.java</b>, you will see that it uses an array of Book objects that contains 7 books, and that the output shows the contents of each array element on a separate line.&nbsp; But what if we want a different format for the lines of out output?&nbsp; To change the output, we need to edit the code that NetBeans generated for our <code>toString</code> method in the <code>Book</code> class.<br/><br/>
+		  </li>
+		  <li> Switch in the editor back to the <b>Book.java</b> file, and edit the body of the <code>toString</code> method so that the value returned has the following format:
             <blockquote> <font face="Arial">
 			    <em><font color="#009900">title_of_book</font></em>, by <em><font color="#009900">author_of_book</font></em>, has <em><font color="#009900">number_of_pages</font></em> pages.
 			</font> </blockquote>
-            When you have correctly written the <code>Book</code> class
-            definition, you should obtain output that looks like this <a
-              href="Lab9b/Lab9bScreenShot1.gif">screen shot image</a>.
-            when you run the program.<br />
+            When you have correctly re-written the <code>toString</code> method, you should obtain output that looks like this (don't forget to put a period at the end):<br/><br/>
+			<img src="Lab9b/Lab9bScreenShot1.gif" width="500" /> <br />
             <br />
           </li>
           <li>Now, let's add two more pieces of information to the <code>Book</code>
             class: an <code>Integer</code> value representing the copyright
             year for the book, and a <code>Boolean</code> value
-            representing whether the book is a hardback book or not. If
-            we do this, we'll also need to modify the constructor method
+            representing whether the book is a hardback book or not.&nbsp; Now we will
+			need a different constructor method for the class that accepts parameters for all
+			five of the properties the class now contains.&nbsp; In the <code>Book</code> class, 
+			delete the current constructor method, then use "Source | Insert Code" to insert a
+			new constructor that instantiates all five properties of the class.&nbsp; 
             of the class, so that it accepts two more parameters of the
             appropriate type, and stores those parameter values in the
             new private data members. <br />
             <br />
+            The <code>toString()</code> method for the <code>Book</code>
+            class should be edited as follows:&nbsp; first of all, replace the single <code>return</code> statement in the method body with this code:
+<pre>
+    String answer = title + ", by " + author + ", has " + numPages + " pages.";
+        
+    return answer;
+</pre>
+			This would do the same thing as the original code, but now we have a variable named <code>answer</code> that we can use in an if/else statement, which we will do right now.&nbsp; At the end of the first line above, concatenate 
+			the string " (c) ", followed by the copyright year for the
+            book, followed by the string "; ". Then, using an <i>if/else</i>
+            statement, concatenate the string "Hardback" to the <code>answer</code> String if the <code>hardback</code>
+            private data member is true, or the string "Paperback" if
+            the <code>hardback</code> private data member is false.<br />
+            <br />
+            Also, be sure to add "getter" methods for both the copyright
+            year and the hardback status value to the class.<br />
+            <br />
+	  </li>
+	  <li>
             The code in the constructor method of the <code>MUPanel</code>
             class (as well as <code></code>
             <code>displayArray </code>and <code>fillEntireArray)</code> will
@@ -211,41 +256,28 @@
               </tbody>
             </table>
             <br />
-            The <code>toString()</code> method for the <code>Book</code>
-            class should be changed as follows: after forming the string
-            as you did above, concatenate 
-			the string " (c) ", followed by the copyright year for the
-            book, followed by a semicolon and a space. Then, using an <i>if/else</i>
-            statement, concatenate the string "Hardback" to the answer String if the <code>hardback</code>
-            private data member is true, or the string "Paperback" if
-            the <code>hardback</code> private data member is false.<br />
-            <br />
-            Also, be sure to add "getter" methods for both the copyright
-            year and the hardback status value.<br />
-            <br />
             When you have correctly modified the <code>Book</code>
             class definition and <code>MUPanel</code>, you should
-            obtain output that looks like this <a
-              href="Lab9b/Lab9bScreenShot2.gif"> screen shot image</a>
-            when you run the program. <br />
+            obtain output that looks like this when you run the program:<br/><br/>
+			<img src="Lab9b/Lab9bScreenShot2.gif" width="500" /> <br />
             <br />
           </li>
           <li>Uncomment the <code>append()</code> method calls in <code>displayEntireArray</code>
             and add <code>if</code> statements to the <code>for</code>
             loop so that the program calculates the totals and produces
-            the output shown in this final <a
-              href="Lab9b/Lab9bScreenShot3.gif"> screen shot</a>.<br />
+            the output shown in this final screen shot:<br/><br/>
+			<img src="Lab9b/Lab9bScreenShot3.gif" width="500"><br />
             <br />
           </li>
         </ol>
       </li>
-<!--  CHANGED FOR FALL 2021 --------------------------------------------------------------------------------------------------
       <li>Make .zip files from both your <b>Lab9a</b> project and your <b>Lab9b</b> project, and submit both .zip files
     	  to the Lab09 Dropbox in <a href="http://d2l.mountunion.edu" target="_blank"> D2L</a>.<br />
--------------------------------------------------------------------------------------------------------------------------- -->
-      <li>Make a .zip file from your <b>Lab9a</b> project, and submit it
+<!--  CHANGED FOR FALL 2021       <li>Make a .zip file from your <b>Lab9a</b> project, and submit it
+--------------------------------------------------------------------------------------------------
     	  to the Lab09 Dropbox in <a href="http://d2l.mountunion.edu" target="_blank"> D2L</a>.<br /> <br/>
 		  You do not need to submit a .zip file for  your <b>Lab9b</b> project.<br/>
+-------------------------------------------------------------------------------------------------------------------------- -->
 
     </ol>
   </body>
